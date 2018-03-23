@@ -7,7 +7,10 @@ const API_KEY = 'AIzaSyAOTmg12SCeBYERVabzdMc9OAPjvraosx0';
 
 const App = () => {
   return (
-    <div><SearchBar /></div>)
+    <div>
+      <SearchBar />
+    </div>
+  );
 }
 
 //Take this component's generated HTML and put it on the page (in the DOM)
