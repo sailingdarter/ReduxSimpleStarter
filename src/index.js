@@ -1,9 +1,11 @@
+import _ from 'lodash';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/searchBar';
 import VideoList from './components/videoList';
 import VideoDetail from './components/VideoDetail';
+import
 const API_KEY = 'AIzaSyAOTmg12SCeBYERVabzdMc9OAPjvraosx0';
 
 YTSearch({key: API_KEY,  term: 'surfboards'}, function(data) { console.log(data)});
@@ -25,7 +27,7 @@ class App extends Component {
   }
 
   videoSearch(term){
-    YTSearch({key: API_KEY,  term: 'surfboards'}, (videos) => {
+    YTSearch({key: API_KEY,  term: term}, (videos) => {
       this.setState({
         videos: videos,             // this.setState.({video: videos}) is a more expanded form of showin the iteration over a video list
         selectedVideo: videos[0]
