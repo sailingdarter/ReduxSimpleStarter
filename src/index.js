@@ -5,7 +5,6 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/searchBar';
 import VideoList from './components/videoList';
 import VideoDetail from './components/VideoDetail';
-import
 const API_KEY = 'AIzaSyAOTmg12SCeBYERVabzdMc9OAPjvraosx0';
 
 YTSearch({key: API_KEY,  term: 'surfboards'}, function(data) { console.log(data)});
@@ -36,6 +35,8 @@ class App extends Component {
   }
 
   render() {
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300)
+
     return(
       <div>
         <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
